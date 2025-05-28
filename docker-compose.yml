@@ -12,6 +12,7 @@ services:
       POST_MAX_SIZE: 128M
     volumes:
       - wordpress_data:/var/www/html
+      - ./php.ini:/usr/local/etc/php/conf.d/99-custom.ini
     deploy:
       resources:
         limits:
