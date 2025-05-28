@@ -12,8 +12,6 @@ services:
       POST_MAX_SIZE: 128M
     volumes:
       - wordpress_data:/var/www/html
-    ports:
-      - "8080:80"
     deploy:
       resources:
         limits:
