@@ -2,14 +2,8 @@ version: "3.8"
 services:
   wordpress:
     build: .
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: exampleuser
-      WORDPRESS_DB_PASSWORD: examplepass
-      WORDPRESS_DB_NAME: exampledb
-      PHP_MEMORY_LIMIT: 1024M
-      UPLOAD_MAX_FILESIZE: 256M
-      POST_MAX_SIZE: 256M
+    env_file:
+      - .env
     volumes:
       - wordpress_data:/var/www/html
     deploy:
