@@ -23,11 +23,6 @@ services:
     restart: always
     depends_on:
       - db
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost/wp-login.php" ]
-      interval: 20s
-      timeout: 10s
-      retries: 10
 
   db:
     image: mysql:latest
