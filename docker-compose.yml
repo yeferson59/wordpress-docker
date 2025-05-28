@@ -23,6 +23,8 @@ services:
     restart: always
     depends_on:
       - db
+    networks:
+      - internal
 
   db:
     image: mysql:8.0
@@ -44,7 +46,13 @@ services:
           cpus: '0.25'
           memory: 512M
     restart: always
+    networks:
+      - internal
 
 volumes:
   wordpress_data:
   db_data:
+
+networks:
+  internal:
+    driver: bridge
