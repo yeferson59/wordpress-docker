@@ -28,8 +28,6 @@ services:
 
   db:
     image: mysql:8.0
-    ports:
-      - "3306:3306"
     environment:
       MYSQL_DATABASE: exampledb
       MYSQL_USER: exampleuser
@@ -52,6 +50,7 @@ services:
 volumes:
   wordpress_data:
   db_data:
+
 
 networks:
   internal:
