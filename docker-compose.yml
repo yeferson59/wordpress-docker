@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   wordpress:
-    image: wordpress:latest
+    build: .
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser
@@ -12,7 +12,6 @@ services:
       POST_MAX_SIZE: 128M
     volumes:
       - wordpress_data:/var/www/html
-      - ./php.ini:/usr/local/etc/php/conf.d/99-custom.ini
     deploy:
       resources:
         limits:
